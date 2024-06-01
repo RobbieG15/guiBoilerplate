@@ -1,7 +1,7 @@
 # :Title: main.py
 # :Description: execute entire project in one spot
 # :Created: 5/30/2024
-# :Last Modified: 5/31/2024
+# :Last Modified: 6/1/2024
 # :Author: Robert Greenslade
 
 # Imports
@@ -12,6 +12,7 @@ from pathlib import Path
 
 from PySide6.QtWidgets import QApplication
 
+from backend.console_logging.console_logging import ConsoleLogger
 from middleware.console_output import log as print
 
 if __name__ == "__main__":
@@ -46,6 +47,7 @@ if __name__ == "__main__":
         system(f'python {Path("frontend").joinpath("ui", "recompile.py")}')
         print("Updating Complete")
     if args.debug:
+        ConsoleLogger().set_debug_mode(True)
         print("Debug Mode Active")
 
     # Keep this right before gui initialization
