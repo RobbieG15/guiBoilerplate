@@ -19,5 +19,6 @@ frontend/ui/compiled/__pycache__
 middleware/__pycache__
 
 # Miscellaneous
+build.zip
 .venv/
 build/
