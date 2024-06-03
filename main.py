@@ -12,8 +12,8 @@ from pathlib import Path
 
 from PySide6.QtWidgets import QApplication
 
-from backend.console_logging.console_logging import ConsoleLogger
 from middleware.console_output import log as print
+from middleware.console_output import set_debug_mode
 
 if __name__ == "__main__":
     # Command line arguments for development
@@ -47,7 +47,7 @@ if __name__ == "__main__":
         system(f'python {Path("frontend").joinpath("ui", "recompile.py")}')
         print("Updating Complete")
     if args.debug:
-        ConsoleLogger().set_debug_mode(True)
+        set_debug_mode(True)
         print("Debug Mode Active")
 
     # Keep this right before gui initialization

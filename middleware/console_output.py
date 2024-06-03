@@ -7,6 +7,8 @@
 # Imports
 from sys import _getframe
 
+from PySide6.QtCore import QObject
+
 from backend.console_logging.console_logging import ConsoleLevel, ConsoleLogger
 
 
@@ -42,3 +44,23 @@ def append_traceback(msg: str) -> str:
         msg += f"\n  {frame.f_code.co_filename} - line {frame.f_lineno}"
         frame = frame.f_back
     return msg
+
+
+def set_debug_mode(debug_mode: bool) -> None:
+    """
+    Setter for the debug mode (adds debug to levels)
+
+    Args:
+        debug_mode (bool): Whether debug mode is on or off
+    """
+    ConsoleLogger().set_debug_mode(debug_mode)
+
+
+def set_console(console: QObject) -> None:
+    """
+    Setter for the self.console instance variable
+
+    Args:
+        console (QObject): The console to echo the msgs to
+    """
+    ConsoleLogger().set_console(console)

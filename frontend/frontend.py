@@ -7,10 +7,10 @@
 # Imports
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
 
-from backend.console_logging.console_logging import ConsoleLevel, ConsoleLogger
+from backend.console_logging.console_logging import ConsoleLevel
 from frontend.ui.compiled.console_widget import Ui_console_widget
 from frontend.ui.compiled.frontend import Ui_MainWindow
-from middleware.console_output import log
+from middleware.console_output import log, set_console
 
 
 class Frontend(QMainWindow):
@@ -25,6 +25,7 @@ class Frontend(QMainWindow):
         # Wrapper ui setup
         super().__init__()
         self.ui = Ui_MainWindow()
+        self.setStyleSheet("background-color: grey;")
         self.ui.setupUi(self)
 
         # Console widget initialization
@@ -34,7 +35,7 @@ class Frontend(QMainWindow):
         console_layout = QVBoxLayout()
         console_layout.addWidget(self.console_widget)
         self.ui.bottom_widget.setLayout(console_layout)
-        ConsoleLogger().set_console(console)
+        set_console(console)
 
         # Test
         log("debug msg", ConsoleLevel.DEBUG)
@@ -42,3 +43,5 @@ class Frontend(QMainWindow):
         log("warning msg", ConsoleLevel.WARNING)
         log("error msg", ConsoleLevel.ERROR)
         log("critcial msg", ConsoleLevel.CRITICAL)
+
+        # Page setup
