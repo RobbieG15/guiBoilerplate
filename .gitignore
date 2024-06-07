@@ -14,6 +14,9 @@ backend/console_logging/__pycache__
 # Frontend
 frontend/__pycache__
 frontend/ui/compiled/__pycache__
+frontend/widgets/__pycache__
+frontend/widgets/side_widgets/__pycache__
+frontend/widgets/top_widgets/__pycache__
 
 # Middleware
 middleware/__pycache__
@@ -22,3 +25,4 @@ middleware/__pycache__
 build.zip
 .venv/
 build/
+pngs/

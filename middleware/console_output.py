@@ -1,7 +1,7 @@
 # :Title: console_output.py
 # :Description: additional middleware functions for console outputting
 # :Created: 5/31/2024
-# :Last Modified: 5/31/2024
+# :Last Modified: 6/6/2024
 # :Author: Robert Greenslade
 
 # Imports
@@ -38,10 +38,10 @@ def append_traceback(msg: str) -> str:
     Returns:
         str: the new message with the additional traceback
     """
-    msg += "\nTraceback:"
+    msg += "\n  Traceback:"
     frame = _getframe(2)
     while frame:
-        msg += f"\n  {frame.f_code.co_filename} - line {frame.f_lineno}"
+        msg += f"\n    {frame.f_code.co_filename} - line {frame.f_lineno}"
         frame = frame.f_back
     return msg
 

@@ -1,0 +1,59 @@
+/* 
+ * :Title: dark_style.qss
+ * :Description: Dark mode styling document
+ * :Created: 6/6/2024
+ * :Last Modified: 6/6/2024
+ * :Author: Robert Greenslade
+ */
+
+QMainWindow {
+  background-color: #222831;
+  color: #F8F0E3;
+  border-radius: 4px;
+  padding: 2px;
+  border: none;
+}
+
+QLabel {
+  background-color: #222831;
+  color: #808080;
+  border-radius: 4px;
+  padding: 2px;
+  border: none;
+}
+
+QMenuBar {
+  background-color: #222831;
+  color: #808080;
+  border-radius: 4px;
+  padding: 2px;
+  border: none;
+}
+
+QTextEdit {
+  background-color: #696969;
+  color: #EEEEEE;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QPushButton {
+  background-color: #31363F;
+  color: #808080;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QPushButton::Hover {
+  background-color: #808080;
+  color: #31363F;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QPushButton::Pressed {
+  background-color: #808080;
+  color: #31363F;
+  border-radius: 4px;
+  padding: 2px;
+}

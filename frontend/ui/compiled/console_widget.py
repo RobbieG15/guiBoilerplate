@@ -29,19 +29,22 @@ class Ui_console_widget(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.console_label = QLabel(console_widget)
         self.console_label.setObjectName(u"console_label")
+        font = QFont()
+        font.setPointSize(12)
+        self.console_label.setFont(font)
 
         self.verticalLayout.addWidget(self.console_label)
 
         self.vertical_line = QFrame(console_widget)
         self.vertical_line.setObjectName(u"vertical_line")
-        self.vertical_line.setFrameShape(QFrame.Shape.HLine)
+        self.vertical_line.setFrameShape(QFrame.Shape.VLine)
         self.vertical_line.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout.addWidget(self.vertical_line)
 
         self.console_text = QTextEdit(console_widget)
         self.console_text.setObjectName(u"console_text")
-        self.console_text.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
+        self.console_text.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
         self.console_text.setReadOnly(True)
 
         self.verticalLayout.addWidget(self.console_text)

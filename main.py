@@ -1,7 +1,7 @@
 # :Title: main.py
 # :Description: execute entire project in one spot
 # :Created: 5/30/2024
-# :Last Modified: 6/1/2024
+# :Last Modified: 6/6/2024
 # :Author: Robert Greenslade
 
 # Imports
@@ -57,6 +57,7 @@ if __name__ == "__main__":
 
     # Main app, only need one of these in entire project
     app = QApplication(sys.argv)
+    app.setStyle("Fusion")
 
     # Initialize the entire frontend (import needs to be down here to avoid ui compile issues)
     from frontend.frontend import Frontend
