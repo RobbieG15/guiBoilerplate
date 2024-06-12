@@ -1,13 +1,12 @@
 # :Title: .gitignore
 # :Description: hide local files or directories from being pushed to remote branch
 # :Created: 5/30/2024
-# :Last Modified: 5/31/2024
+# :Last Modified: 6/11/2024
 # :Author: Robert Greenslade
 
 # Data
 data/serialized
 data/classes/__pycache__
-data/html_examples
 
 # Backend
 backend/console_logging/__pycache__
