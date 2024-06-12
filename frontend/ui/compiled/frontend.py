@@ -198,10 +198,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.page_1_btn.setText(QCoreApplication.translate("MainWindow", u"Page 1", None))
-        self.page_2_btn.setText(QCoreApplication.translate("MainWindow", u"Page 2", None))
-        self.page_3_btn.setText(QCoreApplication.translate("MainWindow", u"Page 3", None))
-        self.page_4_btn.setText(QCoreApplication.translate("MainWindow", u"Page 4", None))
+        self.page_1_btn.setText(QCoreApplication.translate("MainWindow", u"Editor", None))
+        self.page_2_btn.setText(QCoreApplication.translate("MainWindow", u"Email", None))
+        self.page_3_btn.setText(QCoreApplication.translate("MainWindow", u"Server", None))
+        self.page_4_btn.setText(QCoreApplication.translate("MainWindow", u"Attack", None))
         self.menu_file.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
         self.menu_edit.setTitle(QCoreApplication.translate("MainWindow", u"Edit", None))
         self.menu_view.setTitle(QCoreApplication.translate("MainWindow", u"View", None))

@@ -1,11 +1,13 @@
 # :Title: frontend.py
 # :Description: Gather all frontend code into one window
 # :Created: 5/30/2024
-# :Last Modified: 6/6/2024
+# :Last Modified: 6/11/2024
 # :Author: Robert Greenslade
 
 # Imports
 from pathlib import Path
+
+from PySide6.QtGui import QAction, QKeySequence
 
 from backend.console_logging.console_logging import ConsoleLevel
 from frontend.widgets.console_widget import ConsoleWidget
@@ -53,7 +55,6 @@ class Frontend(MainWindow):
         self.side_page_3_layout.addWidget(self.side_page_3_widget)
         self.side_page_4_layout.addWidget(self.side_page_4_widget)
 
-        #
         # Top Page Init
         self.top_page_1_widget = TopPage1()
         self.top_page_2_widget = TopPage2()
@@ -70,15 +71,23 @@ class Frontend(MainWindow):
         self.page_3_btn.clicked.connect(self.on_page_3_btn_click)
         self.page_4_btn.clicked.connect(self.on_page_4_btn_click)
 
-        # Test Log Display
-        print("debug", ConsoleLevel.DEBUG)
-        print("info")
-        print("warning", ConsoleLevel.WARNING)
-        print("error", ConsoleLevel.ERROR)
-        print("critical", ConsoleLevel.CRITICAL)
+        # Menu Bar Init
+        file_save_action = QAction("Save", self)
+        self.menu_file.addAction(file_save_action)
+        file_save_action.setShortcut(QKeySequence("Ctrl+S"))
+        file_save_action.triggered.connect(self.on_save_action)
+
+        # Editor Page Init
+        self.side_page_1_widget.file_explorer_tree.itemDoubleClicked.connect(
+            self._file_explorer_item_double_clicked
+        )
 
         # Set Default Page
         self.on_page_1_btn_click()
+
+    # ------------------------------------------------------------------------------------------------
+    # ---------------------------------------- Frontend Shell ----------------------------------------
+    # ------------------------------------------------------------------------------------------------
 
     def on_page_1_btn_click(self) -> None:
         """
@@ -115,6 +124,20 @@ class Frontend(MainWindow):
         self.top_widget.setCurrentIndex(3)
         self._adjust_tab_style(3)
         print("Switched to page 4", ConsoleLevel.DEBUG)
+
+    def on_save_action(self) -> None:
+        """
+        The action to complete on each page when file -> save is initiated.
+        """
+        match self.side_widget.currentIndex():
+            case 0:
+                self.on_page_1_save()
+            case 1:
+                self.on_page_2_save()
+            case 2:
+                self.on_page_3_save()
+            case 3:
+                self.on_page_4_save()
 
     def _adjust_tab_style(self, tab_index: int) -> None:
         """
@@ -154,3 +177,57 @@ class Frontend(MainWindow):
         self.page_2_btn.setStyleSheet(normal_style)
         self.page_3_btn.setStyleSheet(normal_style)
         self.page_4_btn.setStyleSheet(normal_style)
+
+    # ------------------------------------------------------------------------------------------------
+    # ------------------------------------ Page One Functionality ------------------------------------
+    # ------------------------------------------------------------------------------------------------
+
+    def _file_explorer_item_double_clicked(self) -> None:
+        """
+        On double click event for the file explorer on page 1.
+        """
+        if len(self.side_page_1_widget.file_explorer_tree.selectedItems()) == 1:
+            file_path = self.side_page_1_widget.get_full_file_path(
+                self.side_page_1_widget.file_explorer_tree.currentItem()
+            )
+            if file_path.endswith(".html"):
+                self.top_page_1_widget.load_tab(file_path)
+            else:
+                print("Only html files can be loaded", ConsoleLevel.WARNING)
+
+    def on_page_1_save(self) -> None:
+        """
+        The save action corresponding to page 1.
+        """
+        self.top_page_1_widget.save()
+        self.side_page_1_widget.save()
+
+    # ------------------------------------------------------------------------------------------------
+    # ------------------------------------ Page Two Functionality ------------------------------------
+    # ------------------------------------------------------------------------------------------------
+
+    def on_page_2_save(self) -> None:
+        """
+        The save action corresponding to page 2.
+        """
+        pass
+
+    # ------------------------------------------------------------------------------------------------
+    # ----------------------------------- Page Three Functionality -----------------------------------
+    # ------------------------------------------------------------------------------------------------
+
+    def on_page_3_save(self) -> None:
+        """
+        The save action corresponding to page 3.
+        """
+        pass
+
+    # ------------------------------------------------------------------------------------------------
+    # ----------------------------------- Page Four Functionality ------------------------------------
+    # ------------------------------------------------------------------------------------------------
+
+    def on_page_4_save(self) -> None:
+        """
+        The save action corresponding to page 4.
+        """
+        pass

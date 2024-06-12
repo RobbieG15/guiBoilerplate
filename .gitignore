@@ -7,6 +7,7 @@
 # Data
 data/serialized
 data/classes/__pycache__
+data/html_examples
 
 # Backend
 backend/console_logging/__pycache__

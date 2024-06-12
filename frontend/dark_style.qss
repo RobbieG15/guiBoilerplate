@@ -2,7 +2,7 @@
  * :Title: dark_style.qss
  * :Description: Dark mode styling document
  * :Created: 6/6/2024
- * :Last Modified: 6/6/2024
+ * :Last Modified: 6/11/2024
  * :Author: Robert Greenslade
  */
 
@@ -35,6 +35,81 @@ QTextEdit {
   color: #EEEEEE;
   border-radius: 4px;
   padding: 2px;
+}
+
+QPlainTextEdit {
+  background-color: #696969;
+  color: #EEEEEE;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QTextBrowser {
+  background-color: #696969;
+  color: #EEEEEE;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QLineEdit {
+  background-color: #696969;
+  color: #EEEEEE;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QTreeView {
+  background-color: #696969;
+  color: #EEEEEE;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QTabWidget::pane {
+  background-color: #696969;
+  color: #EEEEEE;
+  border-radius: 4px;
+  padding: 2px;
+} 
+
+QTabBar::tab {
+  background-color: #31363F;
+  color: #808080;
+  border-radius: 4px;
+} 
+
+QTabBar::tab:selected { 
+  background-color: #808080;
+  color: #31363F;
+  border-radius: 4px;
+}
+
+QTreeWidgetItem {
+  background-color: #696969;
+  color: #EEEEEE;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QTreeWidget::item:selected {
+  background-color: #EEEEEE;
+  color: #696969;
+  border-radius: 4px;
+  padding: 2px; 
+}
+
+QMenu {
+  background-color: #222831;
+  color: #808080;
+  padding: 2px;
+  border: none;
+}
+
+QMenu::item::selected {
+  background-color: #808080;
+  color: #222831;
+  padding: 2px;
+  border= none;
 }
 
 QPushButton {
