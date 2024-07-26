@@ -9,7 +9,7 @@ data/serialized
 data/classes/__pycache__
 
 # Backend
-backend/console_logging/__pycache__
+backend/general/__pycache__
 
 # Frontend
 frontend/__pycache__

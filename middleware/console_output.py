@@ -9,7 +9,7 @@ from sys import _getframe
 
 from PySide6.QtCore import QObject
 
-from backend.console_logging.console_logging import ConsoleLevel, ConsoleLogger
+from backend.general.console_logging import ConsoleLevel, ConsoleLogger
 
 
 def log(msg: str, level: ConsoleLevel = ConsoleLevel.INFO) -> bool:
