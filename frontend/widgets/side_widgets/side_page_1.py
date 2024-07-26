@@ -12,7 +12,7 @@ from pathlib import Path
 
 from PySide6.QtWidgets import QFileDialog, QTreeWidgetItem, QWidget
 
-from backend.console_logging.console_logging import ConsoleLevel
+from backend.general.console_logging import ConsoleLevel
 from frontend.ui.compiled.side_page_1 import Ui_Form
 from middleware.console_output import log as print
 

@@ -10,7 +10,7 @@ from pathlib import Path
 from PySide6.QtGui import QTextCursor
 from PySide6.QtWidgets import QPlainTextEdit, QTextBrowser, QWidget
 
-from backend.console_logging.console_logging import ConsoleLevel
+from backend.general.console_logging import ConsoleLevel
 from frontend.ui.compiled.top_page_1 import Ui_Form
 from middleware.console_output import log as print
 

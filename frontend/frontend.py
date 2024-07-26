@@ -9,7 +9,7 @@ from pathlib import Path
 
 from PySide6.QtGui import QAction, QKeySequence
 
-from backend.console_logging.console_logging import ConsoleLevel
+from backend.general.console_logging import ConsoleLevel
 from frontend.widgets.console_widget import ConsoleWidget
 from frontend.widgets.main_window import MainWindow
 from frontend.widgets.side_widgets.side_page_1 import SidePage1
